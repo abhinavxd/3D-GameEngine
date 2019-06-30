@@ -9,26 +9,24 @@ import org.lwjgl.opengl.PixelFormat;
 
 public class DisplayManager {
 	
-	private static final int WIDTH = 1280;
-	private static final int HEIGHT = 720;
-	private static final int FPS_CAP = 120;
+	private static final int WIDTH = 1366;
+	private static final int HEIGHT = 768;
+	private static final int FPS_CAP = 250;
 	
 	public static void createDisplay() {
 		
-		ContextAttribs attribs = new ContextAttribs(3,2);
-		attribs.withForwardCompatible(true);
-		attribs.withProfileCore(true);
+		ContextAttribs attribs = new ContextAttribs(3,2).withForwardCompatible(true).withProfileCore(true);
 		
 		
 		try {
 			Display.setDisplayMode(new DisplayMode(WIDTH,HEIGHT));
 			Display.create(new PixelFormat(), attribs);
-			Display.setTitle("First Display!");
+			Display.setTitle("Dragon!");
 		}catch(LWJGLException e) {
 			e.printStackTrace();
 		}
 		
-		GL11.glViewport(0, 0, WIDTH, HEIGHT);
+		GL11.glViewport(0, 0, WIDTH, HEIGHT);   //Where to display, here the whole display
 		
 	}
 	
