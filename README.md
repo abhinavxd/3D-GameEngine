@@ -1,4 +1,4 @@
-# 3D-game-in-Java
+# 3D-GameEngine
 Using Lightweight Java Game Library
 
 slowly learning LWJGL
